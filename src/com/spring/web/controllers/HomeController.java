@@ -11,4 +11,5 @@ public class HomeController {
 	public String showHome(Model model) {		
 		return "home";
 	}
+	
 }

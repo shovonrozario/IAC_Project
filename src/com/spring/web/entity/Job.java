@@ -2,6 +2,7 @@ package com.spring.web.entity;
 
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.spring.web.validation.ValidEmail;
@@ -9,10 +10,10 @@ import com.spring.web.validation.ValidEmail;
 public class Job {
 	private int id;
 	
-	@Size(min=2, max=200, message="Job title must be between 2 and 200 characters")
+	@Size(min=2, max=200)
 	private String title;
 	
-	@Size(min=2, max=200, message="Company name must be between 2 and 200 characters")
+	@Size(min=2, max=200)
 	private String company;
 	
 	private String details;
@@ -20,7 +21,7 @@ public class Job {
 	@ValidEmail
 	private String email;
 	
-	@NotEmpty(message="Please enter deadline")
+	@NotBlank
 	private String deadline;
 	
 	public Job() {

@@ -3,6 +3,7 @@ package com.spring.web.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import com.spring.web.dao.JobsDao;
@@ -25,6 +26,7 @@ public class JobsService {
 		return jobsDao.getJobs();
 	}
 
+	@Secured({"ROLE_ADMIN", "ROLE_GENERAL"})
 	public void create(Job job) {
 		jobsDao.create(job);
 		
