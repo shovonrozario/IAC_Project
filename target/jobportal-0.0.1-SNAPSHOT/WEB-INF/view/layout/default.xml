@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="jobportal.base" template="/WEB-INF/view/templates/default.jsp">
+		<put-attribute name="header" value="/WEB-INF/view/tiles/header.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/content.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/view/tiles/footer.jsp"></put-attribute>
+	</definition>
+	<definition name="home" extends="jobportal.base">
+		<put-attribute name="title" value="Home"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/home.jsp"></put-attribute>
+	</definition>
+	<definition name="jobs" extends="jobportal.base">
+		<put-attribute name="title" value="Jobs"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/jobs.jsp"></put-attribute>
+	</definition>
+	<definition name="login" extends="jobportal.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/login.jsp"></put-attribute>
+	</definition>
+	<definition name="newaccount" extends="jobportal.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/newaccount.jsp"></put-attribute>
+	</definition>
+	<definition name="createjob" extends="jobportal.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/createjob.jsp"></put-attribute>
+	</definition>
+	
+	
+	
+	<definition name="accountcreated" extends="jobportal.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/accountcreated.jsp"></put-attribute>
+	</definition>
+	<definition name="admin" extends="jobportal.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/admin.jsp"></put-attribute>
+	</definition>
+	<definition name="error" extends="jobportal.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/error.jsp"></put-attribute>
+	</definition>
+	<definition name="denied" extends="jobportal.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/denied.jsp"></put-attribute>
+	</definition>
+	<definition name="jobcreated" extends="jobportal.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/jobcreated.jsp"></put-attribute>
+	</definition>
+	<definition name="loggedout" extends="jobportal.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/loggedout.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

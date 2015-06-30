@@ -9,12 +9,7 @@
 
 	<context:component-scan base-package="com.spring.web.controllers"></context:component-scan>
 	<mvc:annotation-driven></mvc:annotation-driven>
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		id="jspViewResolver">
-		<property name="prefix" value="/WEB-INF/jsps/"></property>
-		<property name="suffix" value=".jsp"></property>
-	</bean>
+	
 	
 	<mvc:resources location="/resources/" mapping="/static/**" />
 	
@@ -22,5 +17,16 @@
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="com.spring.web.properties.message">
 		</property>
+	</bean>
+	<bean id="tilesViewResolver"
+		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+	</bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+	<property name="definitions">
+		<list>
+			<value>/WEB-INF/view/layout/default.xml</value>
+		</list>
+	</property>
 	</bean>
 </beans>

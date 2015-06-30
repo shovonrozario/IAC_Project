@@ -1,9 +1,13 @@
+com/spring/web/controllers/JobsController.class
+com/spring/web/services/UsersService.class
+com/spring/web/validation/ValidEmail.class
+com/spring/web/controllers/LoginController.class
+com/spring/web/services/JobsService.class
 com/spring/web/controllers/HomeController.class
 com/spring/web/dao/JobsDao$1.class
 com/spring/web/dao/JobsDao$2.class
-com/spring/web/controllers/JobsController.class
-com/spring/web/validation/ValidEmail.class
 com/spring/web/entity/Job.class
 com/spring/web/dao/JobsDao.class
 com/spring/web/validation/ValidEmailImpl.class
-com/spring/web/services/JobsService.class
+com/spring/web/entity/User.class
+com/spring/web/dao/UsersDao.class
