@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 25, 2015 at 03:23 PM
+-- Generation Time: Jul 01, 2015 at 09:15 PM
 -- Server version: 5.5.43-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.9
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `job` (
   `deadline` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `job`
@@ -64,9 +64,11 @@ CREATE TABLE IF NOT EXISTS `job` (
 
 INSERT INTO `job` (`id`, `title`, `company`, `details`, `email`, `deadline`) VALUES
 (1, 'Software Developer', 'Therap Services Ltd', 'Work as Technical Lead of Java/Web projects and take responsibility for designing entire application architecture based on requirements, creating base code and standardizing all technical principles.\r\nHave experience in designing project common lib/framework for client side using SCSS, Less and jQuery or MVVM framework to improve project quality and productivity.\r\nHave experience in designing flow of testing phase and documenting to inform project standards to developers.', 'therap@gmail.com', '13 July, 2015'),
-(2, 'Copywriter', 'Sekai Lab', 'Work as Technical Lead of Java/Web projects and take responsibility for designing entire application architecture based on requirements, creating base code and standardizing all technical principles.\r\nHave experience in designing project common lib/framework for client side using SCSS, Less and jQuery or MVVM framework to improve project quality and productivity.\r\nHave experience in designing flow of testing phase and documenting to inform project standards to developers.', 'sekai-lab@gmail.com', '12 August, 2015'),
-(3, 'shovon', 'sekai', 'ola ola', 'shovon@mgail.com', '12 ajasda'),
-(4, 'New Title', 'Another Company', 'This is a new job.', 'newjob@gmail.com', '13 New Month, Old Year');
+(5, 'Copy Writer', 'Khola Janala', 'Have to write a lot!', 'saikat@gmail.com', '13 June, 2014'),
+(7, 'Biochemist', 'Square Ltd', 'Has to work 24 hrs a day.', 'sqr@gmail.com', '23 August, 2014'),
+(8, 'Developer', 'TNT Corp', 'Work as software developer', 'tcorp@gmail.com', '11 August, 2015'),
+(9, 'Business Manager', 'Unilever Bangladesh', 'Has to perform various managerial duties.', 'uni@unilever.com', '31 February, 2016'),
+(10, 'Software Manager', 'BRAC IT Ltd', 'Have to manage software projects.', 'brac@bracit.com', '12 January, 2016');
 
 -- --------------------------------------------------------
 
