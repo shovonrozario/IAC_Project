@@ -32,22 +32,49 @@ public class JobsController {
 	public String showJobs(Model model) {
 		List<Job> jobs = jobsService.getCurrent();
 		model.addAttribute("jobs", jobs);
+		model.addAttribute("resultCount", jobs.size());
 		return "jobs";
 	}
-	
+
 	@RequestMapping("/jobdetail")
-	public String showJobDetail(Model model, @RequestParam("id") String id) {
+	public String showJobDetail(Model model, @RequestParam("id") int id) {
 		try {
-			Job job = jobsService.getJob(Integer.parseInt(id));
+			Job job = jobsService.getJob(id);
 			model.addAttribute("job", job);
-		}catch(NumberFormatException e) {
+		} catch (NumberFormatException e) {
+			return "error";
+		}
+
+		return "jobdetail";
+	}
+
+	@RequestMapping("/editjob")
+	public String editJob(Model model, @RequestParam("id") int id) {
+		try {
+			Job job = jobsService.getJob(id);
+			model.addAttribute(job);
+		} catch (NumberFormatException e) {
 			return "error";
 		}
 		
+		return "editjob";
+	}
+
+	@RequestMapping(value = "/updatejob", method = RequestMethod.POST)
+	public String updateJob(Model model, @Valid Job job, BindingResult result) {
+		if (result.hasErrors()) {
+			return "editjob";
+		}
+		System.out.println("while update " +  job);
+
+		if (!jobsService.update(job)) {
+			return "error";
+		}
 		
+		model.addAttribute("job", job);
 		return "jobdetail";
 	}
-	
+
 	@RequestMapping("/searchjob")
 	public String searchJob(Model model, String searchParam) {
 		List<Job> jobs = jobsService.getRelevantJobs(searchParam);
@@ -62,16 +89,30 @@ public class JobsController {
 		model.addAttribute(new Job());
 		return "createjob";
 	}
-	
-	@RequestMapping(value="/docreate", method=RequestMethod.POST)
+
+	@RequestMapping(value = "/docreate", method = RequestMethod.POST)
 	public String doCreate(Model model, @Valid Job job, BindingResult result) {
-		if(result.hasErrors()) {			
+		if (result.hasErrors()) {
 			return "createjob";
 		}
 		jobsService.create(job);
 		return "jobcreated";
 	}
-	
+
+	@RequestMapping("/deletejob")
+	public String deleteJob(Model model, int id) {
+		try {
+			jobsService.deleteJob(id);
+		} catch (Exception e) {
+			return "error";
+		}
+
+		List<Job> jobs = jobsService.getCurrent();
+		model.addAttribute("jobs", jobs);
+		model.addAttribute("resultCount", jobs.size());
+		return "jobs";
+	}
+
 	@ExceptionHandler(DataAccessException.class)
 	public String handleDatabaseException(DataAccessException e) {
 		return "error";

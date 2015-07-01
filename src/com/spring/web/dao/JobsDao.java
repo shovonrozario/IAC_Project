@@ -2,6 +2,7 @@ package com.spring.web.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -54,6 +55,8 @@ public class JobsDao {
 	}
 
 	public boolean update(Job job) {
+		
+		System.out.println(job);
 
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(
 				job);
@@ -62,12 +65,15 @@ public class JobsDao {
 				.update("update job set title=:title, company=:company, details=:details, email=:email,  deadline=:deadline where id=:id",
 						params) == 1;
 	}
-	
+
 	public boolean create(Job job) {
 
-		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(job);
-		
-		return jdbc.update("insert into job (title, company, details, email, deadline) values (:title, :company, :details, :email, :deadline)", params) == 1;
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(
+				job);
+
+		return jdbc
+				.update("insert into job (title, company, details, email, deadline) values (:title, :company, :details, :email, :deadline)",
+						params) == 1;
 	}
 
 	public Job getJob(int id) {
@@ -97,7 +103,16 @@ public class JobsDao {
 	}
 
 	public List<Job> getJobs(String searchParam) {
-		String query = "select * from job where title = '" + searchParam + "'";
+		String searchParams[] = searchParam.split(" ");
+		String query = "select * from job where title like '%" + searchParam
+				+ "%' or details like '%" + searchParam + "%'";
+		if (searchParams.length > 1) {
+			for (String text : searchParams) {
+				query = query + " or title like '%" + text
+						+ "%' or details like '%" + text + "%'";
+			}
+		}
+
 		return jdbc.query(query, new RowMapper<Job>() {
 
 			public Job mapRow(ResultSet rs, int rowNum) throws SQLException {

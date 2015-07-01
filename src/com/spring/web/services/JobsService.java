@@ -39,6 +39,15 @@ public class JobsService {
 	public List<Job> getRelevantJobs(String searchParam) {
 		return jobsDao.getJobs(searchParam);		
 	}
+
+	public boolean deleteJob(int id) {
+		return jobsDao.delete(id);
+	}
+
+	public boolean update(Job job) {
+		return jobsDao.update(job);
+		
+	}
 	
 	
 }

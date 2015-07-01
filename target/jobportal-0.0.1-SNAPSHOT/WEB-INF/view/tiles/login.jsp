@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-10 col-md-offset-1">
 	<form name="loginForm" class="form-horizontal"
 		action="${pageContext.request.contextPath}/j_spring_security_check"
 		method="POST">

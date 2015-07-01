@@ -4,7 +4,7 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-10 col-md-offset-1">
 
 	<h1>Welcome to Job Portal Home</h1>
 

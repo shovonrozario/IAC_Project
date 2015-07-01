@@ -62,4 +62,8 @@
 		<put-attribute name="title" value="Search Result"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/view/tiles/searchresult.jsp"></put-attribute>
 	</definition>
+	<definition name="editjob" extends="jobportal.base">
+		<put-attribute name="title" value="Edit Job"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/editjob.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>

@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-10 col-md-offset-1">
 	<sf:form class="form-horizontal"
 		action="${pageContext.request.contextPath}/docreate" method="post"
 		commandName="job">

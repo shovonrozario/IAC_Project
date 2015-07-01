@@ -3,7 +3,7 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-10 col-md-offset-1">
 	<sf:form class="form-horizontal"
 		action="${pageContext.request.contextPath}/createaccount"
 		method="post" commandName="user">

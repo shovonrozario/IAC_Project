@@ -2,22 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div class="col-md-6 col-md-offset-3">
-	<p>
-		<a href="<c:url value='/j_spring_security_logout' />">Log out</a>
-	</p>
-	<p>
-		<a href="<c:url value='/admin' />">Admin Panel</a>
-	</p>
+<div class="col-md-10 col-md-offset-1">
 
 	<h1>Admin Panel</h1>
-	<p>
-		<a href="${pageContext.request.contextPath}/createjob">Create new
-			job</a><br> <a href="${pageContext.request.contextPath}/jobs">Show
-			all jobs</a>
-	</p>
 
-	<h1>All Users</h1>
+	<h3>All Users</h3>
 
 	<table class="table table-striped">
 		<tr>

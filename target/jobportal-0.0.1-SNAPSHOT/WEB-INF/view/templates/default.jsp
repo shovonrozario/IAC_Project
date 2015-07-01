@@ -41,16 +41,12 @@
 	<br>
 	<div class="container">
 		<div class="pull-right">
-			<form class="form-horizontal">
-				<!-- Text input-->
-				<div class="control-group">
-					<label class="control-label" for="search"></label>
-					<div class="controls">
-						<input id="search" name="search" placeholder="Search here"
-							class="input-xxlarge" type="text">
-						<button id="search" name="search" class="btn btn-primary">Search</button>
-					</div>
+			<form class="form-inline" method="get" action="<c:url value='/searchjob' />">
+				<div class="form-group">
+					<input type="text" class="form-control" id="searchParam" name="searchParam"
+						placeholder="Search jobportal">
 				</div>
+				<button type="submit" class="btn btn-primary">Search</button>
 			</form>
 		</div>
 		<div class="clear"></div>

@@ -4,12 +4,14 @@
 
 <div class="col-md-10 col-md-offset-1">
 	<sf:form class="form-horizontal"
-		action="${pageContext.request.contextPath}/docreate" method="post"
+		action="${pageContext.request.contextPath}/updatejob" method="post"
 		commandName="job">
 		<fieldset>
 
 			<!-- Form Name -->
-			<legend>Add New Job</legend>
+			<legend>Edit Job</legend>
+			
+			<sf:hidden path="id" />
 
 			<!-- Text input-->
 			<div class="control-group">
@@ -72,7 +74,7 @@
 			<div class="control-group">
 				<label class="control-label" for="submit"></label>
 				<div class="controls">
-					<button id="submit" name="submit" class="btn btn-primary">Add
+					<button id="submit" name="submit" class="btn btn-primary">Update
 						Job</button>
 				</div>
 			</div>

@@ -84,6 +84,13 @@ public class Job {
 
 	public void setDeadline(String deadline) {
 		this.deadline = deadline;
+	}
+
+	@Override
+	public String toString() {
+		return "Job [id=" + id + ", title=" + title + ", company=" + company
+				+ ", details=" + details + ", email=" + email + ", deadline="
+				+ deadline + "]";
 	}	
 	
 	
