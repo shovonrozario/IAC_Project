@@ -17,10 +17,8 @@ import com.spring.web.services.UsersService;
 
 @Controller
 public class LoginController {
-	
+
 	private UsersService usersService;
-	
-	
 
 	public UsersService getUsersService() {
 		return usersService;
@@ -35,12 +33,12 @@ public class LoginController {
 	public String showLogin() {
 		return "login";
 	}
-	
+
 	@RequestMapping("/denied ")
 	public String showDenied() {
 		return "denied";
 	}
-	
+
 	@RequestMapping("/loggedout")
 	public String showLoggedOut() {
 		return "loggedout";
@@ -69,12 +67,12 @@ public class LoginController {
 			result.rejectValue("username", "DuplicateKey.user.username");
 			return "newaccount";
 		}
-		
+
 		return "accountcreated";
 	}
-	
+
 	@RequestMapping("/admin")
-	public String showAdmin(Model model) {	
+	public String showAdmin(Model model) {
 		List<User> users = usersService.getAllUsers();
 		model.addAttribute("users", users);
 		return "admin";

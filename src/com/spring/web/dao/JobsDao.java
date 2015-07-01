@@ -96,4 +96,22 @@ public class JobsDao {
 
 	}
 
+	public List<Job> getJobs(String searchParam) {
+		String query = "select * from job where title = '" + searchParam + "'";
+		return jdbc.query(query, new RowMapper<Job>() {
+
+			public Job mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Job job = new Job();
+				job.setId(rs.getInt("id"));
+				job.setTitle(rs.getString("title"));
+				job.setCompany(rs.getString("company"));
+				job.setDetails(rs.getString("details"));
+				job.setEmail(rs.getString("email"));
+				job.setDeadline(rs.getString("deadline"));
+
+				return job;
+			}
+		});
+	}
+
 }

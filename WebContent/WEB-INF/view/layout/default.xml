@@ -39,7 +39,7 @@
 		<put-attribute name="content" value="/WEB-INF/view/tiles/admin.jsp"></put-attribute>
 	</definition>
 	<definition name="error" extends="jobportal.base">
-		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="title" value="Error"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/view/tiles/error.jsp"></put-attribute>
 	</definition>
 	<definition name="denied" extends="jobportal.base">
@@ -53,5 +53,13 @@
 	<definition name="loggedout" extends="jobportal.base">
 		<put-attribute name="title" value="Login"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/view/tiles/loggedout.jsp"></put-attribute>
+	</definition>
+	<definition name="jobdetail" extends="jobportal.base">
+		<put-attribute name="title" value="Job Detail"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/jobdetail.jsp"></put-attribute>
+	</definition>
+	<definition name="searchresult" extends="jobportal.base">
+		<put-attribute name="title" value="Search Result"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/view/tiles/searchresult.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>

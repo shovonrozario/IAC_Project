@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="col-md-10 col-md-offset-1">
-	<h1>Available Jobs</h1>
-
+	<h1>Search results for ${ searchParam }</h1>
+	<h3>${ resultCount } results found</h3><br>
 	<table class="table table-striped table-hover">
 		<tr>
 			<th>Job ID</th>

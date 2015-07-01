@@ -31,6 +31,14 @@ public class JobsService {
 		jobsDao.create(job);
 		
 	}
+
+	public Job getJob(int id) {
+		return jobsDao.getJob(id);
+	}
+
+	public List<Job> getRelevantJobs(String searchParam) {
+		return jobsDao.getJobs(searchParam);		
+	}
 	
 	
 }
